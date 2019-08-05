@@ -11,11 +11,11 @@ import java.util.stream.Stream;
 
 public class Main {
 
-    private static final String PATH = "C:\\Users\\YAROSLAV\\Desktop\\files\\";
-    public static final String BACKUP = "C:\\Users\\YAROSLAV\\Desktop\\backup\\";
+    private static final String ORIGIN = "C:\\projects\\multithread-file-backup-project\\src\\resources\\origin\\";
+    public static final String BACKUP = "C:\\projects\\multithread-file-backup-project\\src\\resources\\backup\\";
 
     public static void main(String[] args) {
-        try (Stream<Path> walk = Files.walk(Paths.get(PATH))) {
+        try (Stream<Path> walk = Files.walk(Paths.get(ORIGIN))) {
 
             ArrayList<String> strings = walk.filter(Files::isRegularFile)
                     .map(Path::toString)
